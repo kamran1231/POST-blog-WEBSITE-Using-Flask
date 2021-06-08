@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Blog Detail {% endblock title %}
+{% block body %}
+
+
+
+    <div class="col-sm-8 offset-2 mt-3">
+        <h2 style="font-family:cursive; color: rgb(255, 166, 0);"
+            class="text-center">Blog Detail</h2>
+            <hr>
+            <br>
+            <br>
+        <div class="
+      row
+      g-0
+      border
+      rounded
+      overflow-hidden
+      flex-md-row
+      mb-4
+      shadow-sm
+      h-md-250
+      position-relative
+    ">
+            <div class="col p-4 flex-column">
+                <h3 class="mb-0" style="font-family: Arial, Helvetica, sans-serif; color: rgb(196, 113, 36);">
+                    {{blog.title|capitalize}}</h3>
+                <div class="mb-1 text-muted"><b>Pub Date:</b> {{blog.pub_date}}</div>
+                <div class="mb-1 text-muted"><b>Author:</b> {{blog.author|capitalize}}</div>
+                <p class="card-text mb-auto" style="font-family:monospace;"><b
+                        style="color: rgb(56, 185, 30);">Content:</b> {{blog.content|capitalize}}</p>
+                        <br>
+
+                        <a href="/" class="btn btn-primary">Back</a>
+                        <a href="/blog_edit/{{blog.blog_id}}" class="btn btn-warning">Edit</a>
+                        <a href="/blog_delete/{{blog.blog_id}}" class="btn btn-danger">Delete</a>
+                        
+                        
+                       
+                                       
+                
+            </div>
+            
+
+        </div>
+    </div>
+
+{% endblock body %}

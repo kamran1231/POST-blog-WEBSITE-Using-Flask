@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} Edit Page {% endblock title %}
+{% block body %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-6 offset-3">
+            <h2 style="font-family:cursive; color: rgb(255, 166, 0);"
+            class="text-center">Edit Blog Post</h2>
+            <hr>
+            <form method="POST">
+                <div class="mb-3">
+                  <label for="" class="form-label"><b>Title</b></label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="title" value="{{post.title}}">
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label"><b>Author</b></label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="author" value="{{post.author}}">
+                    
+                  </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"><b>Content</b></label>
+                  <input type="textarea" class="form-control" name="content" value="{{post.content}}">
+                  <!-- <textarea id="w3review"  name="content"  rows="4" cols="50" class="form-control"></textarea> -->
+                  <!-- <input type="textarea" rows="4" class="form-control" id="exampleInputPassword1"> -->
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+    
+{% endblock body %}

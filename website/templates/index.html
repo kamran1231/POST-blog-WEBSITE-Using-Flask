@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block title %} Index Page {% endblock title %}
+
+
+{% block body %}
+
+
+<div class="col-sm-8 offset-2">
+    
+
+    <h2 style="font-family:cursive; color: rgb(255, 166, 0);"
+            class="text-center">Blog Post</h2>
+            <hr>
+
+
+<div class="row mb-2">
+    
+
+    {% for d in data %}
+    <div class="col-md-6">
+        <div class="
+      row
+      g-0
+      border
+      rounded
+      overflow-hidden
+      flex-md-row
+      mb-4
+      shadow-sm
+      h-md-250
+      position-relative
+    ">
+            <div class="col p-4 flex-column">
+                <h3 class="mb-0" style="font-family: Arial, Helvetica, sans-serif; color: rgb(196, 113, 36);">
+                    {{d.title|capitalize}}</h3>
+                <div class="mb-1 text-muted"><b>Pub Date:</b> {{d.pub_date}}</div>
+                <div class="mb-1 text-muted"><b>Author:</b> {{d.author|capitalize}}</div>
+                <p class="card-text mb-auto" style="font-family:monospace;"><b
+                        style="color: rgb(56, 185, 30);">Content:</b> {{d.content[0:10]|capitalize}}....</p>
+                        <br>
+                <a href="/blog_detail/{{d.blog_id}}" class="stretched-link btn btn-primary">Continue reading</a>
+                
+                
+            </div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+    <div class="clearfix">
+        <a class="btn btn-primary float-left " href="" >&larr; Newer Post</a>
+    <a class="btn btn-primary float-right " href="" >Old Post &rarr;</a>
+    </div>
+
+    
+</div>
+
+</div>
+
+</div>
+
+{% endblock body %}
